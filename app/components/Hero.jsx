@@ -13,7 +13,7 @@ function Hero() {
               <img src={brain.src} alt="hiii" className='h-20 inline-block up-down-animation ' />
             </span></h1>
         </div>
-        <p className="mt-6 text-lg text-gray-400 tracking-[2px] md:text-xl z-11"> Your personal assistant for daily productivity, goals, and smart scheduling.</p>
+        <p className="mt-6 text-lg text-gray-400 tracking-[2px] md:text-xl z-11  text-center"> Your personal assistant for daily productivity, goals, and smart scheduling.</p>
       </div>
       <div className='absolute top-20 show h-[300px] w-[300px]'></div>
     </div>
