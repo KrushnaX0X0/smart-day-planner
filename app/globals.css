@@ -11,6 +11,17 @@
     src: url(./font/DancingScript-VariableFont_wght.ttf);
 }
 
+@font-face {
+  font-family: gilroy;
+  src: url(./font/Gilroy-Bold.ttf);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: gilroy;
+}
+
 .show{
     background-color: rgba(47, 223, 24, 0.678);
     filter: blur(100px);
@@ -22,6 +33,9 @@
 
 .font2{
     font-family: font2;
+}
+.gilroy{
+  font-family:gilroy ;
 }
 
 
