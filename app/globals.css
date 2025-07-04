@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+
+@font-face {
+    font-family: font1;
+    src: url(./font/DancingScript-Bold.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(./font/DancingScript-VariableFont_wght.ttf);
+}
+
+.show{
+    background-color: rgba(47, 223, 24, 0.678);
+    filter: blur(100px);
+}
+
+.font1{
+    font-family: font1;
+}
+
+.font2{
+    font-family: font2;
+}
+
+
+.up-down-animation {
+  animation: floatImage 3s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px); /* Move up */
+  }
+  100% {
+    transform: translateY(0px); /* Back to original */
+  }
+}
