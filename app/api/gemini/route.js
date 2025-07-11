@@ -10,29 +10,36 @@ export const POST = async (req,res) => {
    const body = await req.json();
    const { userMessage } = await body.userMessage;;
   
-    const prompt = `You are a smart day planner AI.
+    const prompt = `You are a Smart Day Planner AI assistant.
 
-When a user gives a one-line summary of their day, generate a structured daily plan in valid JSON format.
+The user will give you a short sentence describing their day, such as:
+- "I have to study"
+- "Going to gym in evening"
+- "Exam tomorrow"
+- "Need to focus on work"
 
-Each item must include:
-- time (like "09:00 AM")
-- topic (short task title)
-- description (what to do)
+Your task is to generate a **structured daily plan** in valid **JSON** format.
 
-Return ONLY JSON in the format:
+✅ Output Format:
 {
   "day_plan": [
     {
-      "time": "09:00 AM",
-      "topic": "Meeting",
-      "description": "Discuss updates with the team."
+      "time": "08:00 AM",
+      "topic": "Task title",
+      "description": "What the user should do at that time"
     },
     ...
   ]
 }
 
-User Input: ${userMessage}`;
-     
+✅ Rules:
+- Output only JSON. No extra text or greetings.
+- Use 3 to 6 time slots between 6:00 AM and 10:00 PM.
+- Format time in 12-hour format with AM/PM.
+- Be logical and realistic based on the user input.
+- Add productive tasks even if user input is short.
+
+User Input: ${userMessage}`
    try {
      const response = await openai.chat.completions.create({
       model: "mistralai/mistral-7b-instruct",

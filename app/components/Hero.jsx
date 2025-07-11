@@ -1,22 +1,23 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import brain from "../img/brain.png";
+import axios from 'axios';
 // import ShinyText from '../components/ShinyText';
 
 
 function Hero() {
-
-    const [prompt, setPrompt] = useState("give me 5 html tag");
+      
+    const [prompt, setPrompt] = useState("");
 
     const handleAsk = async () => {
  
-    const res = await fetch("/api/gemini", {
+    const res = await axios.post("/api/gemini", {
       method: "POST",
       body: JSON.stringify({ prompt }),
       headers: { "Content-Type": "application/json" },
     });
-    const data = await res.json();
-    console.log(data.reply);
+     const data = await res.json();
+     console.log(data.reply);
     
     };
 
@@ -43,7 +44,7 @@ function Hero() {
       
         <p className="mt-6 text-md sm:text-lg md:text-xl text-gray-400 tracking-wide text-center max-w-2xl z-10">
           
-          {/* <ShinyText text="" disabled={false} speed={3} className='custom-class' /> */}
+          {/* <ShinyText text=" Your personal assistant for daily productivity, goals, and smart scheduling." disabled={false} speed={3} className='custom-class mt-6 text-md sm:text-lg md:text-[1.2em] text-gray-400 tracking-wide text-center max-w-2xl z-10' /> */}
           Your personal assistant for daily productivity, goals, and smart scheduling.
         </p>
       </div>
