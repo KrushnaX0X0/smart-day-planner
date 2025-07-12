@@ -51,8 +51,10 @@ body{
 
 
 .show6{
+
     background-color: rgb(21, 224, 224);
     filter: blur(50px);
+    
     z-index: 0;
 }
 
