@@ -69,7 +69,7 @@ function page() {
                     </div>
                 </div>
 
-                <div className='min-h-[70vh] w-full flex  gap-10 z-30 flex-wrap p-6  '>
+                <div className='min-h-[70vh] w-full flex justify-center  gap-10 z-30 flex-wrap p-6  '>
                     {
                         data?.map((iteam, index) => (
                             <div key={index} className='flex flex-col '>
