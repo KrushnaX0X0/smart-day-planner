@@ -9,10 +9,14 @@ import Loading from '../components/Loading';
 function page() {
   const route = useRouter()
   const [userinput, setuserinput] = useState("")
-  const [loading, setloading] = useState(true)
+  const [loading, setloading] = useState(false)
 
 
   const aigenretor = async () => {
+
+       if(!userinput) {
+        return
+       }
     const res = await fetch("/api/gemini", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -48,7 +52,6 @@ function page() {
     <div className='h-screen w-full relative '>
       <div className='pt-16  text-center text-white text-4xl z-10 relative md:text-6xl md:leading-24 '>
         <ShinyText text="What do you want to  achieve today ?" disabled={false} speed={3} className='custom-class' />
-
       </div>
       <p className='text-2xl text-center white-bule md:ml-46 md:text-start '>
         Let AI turn your goals into a smart plan 🤖.</p>

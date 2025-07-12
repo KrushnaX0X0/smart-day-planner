@@ -25,9 +25,14 @@ body{
   overflow-x: hidden;
 }
 
+ body::-webkit-scrollbar{
+  display: none;
+ }
+
 .show{
     background-color: rgba(226, 240, 238, 0.952);
     filter: blur(130px);
+    z-index: 0;
    
 }
 
@@ -35,7 +40,22 @@ body{
 .show1{
     background-color: rgb(253, 237, 14);
     filter: blur(100px);
+       z-index: 0;
 }
+
+.show5{
+    background-color: rgb(255, 255, 255);
+    filter: blur(90px);
+    z-index: 0;
+}
+
+
+.show6{
+    background-color: rgb(21, 224, 224);
+    filter: blur(50px);
+    z-index: 0;
+}
+
 
 
 .font1{
@@ -147,8 +167,15 @@ body{
   animation: none;
 }
 
+.glass-1{
+background: rgba(8, 8, 8, 1);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);
+border: 1px solid rgba(8, 8, 8, 1);
 
-
+}
 
 .star-border-container {
   display: inline-block;

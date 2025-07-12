@@ -6,24 +6,7 @@ import axios from 'axios';
 
 
 function Hero() {
-      
-    const [prompt, setPrompt] = useState("");
-
-    const handleAsk = async () => {
- 
-    const res = await axios.post("/api/gemini", {
-      method: "POST",
-      body: JSON.stringify({ prompt }),
-      headers: { "Content-Type": "application/json" },
-    });
-     const data = await res.json();
-     console.log(data.reply);
-    
-    };
-
-    useEffect(()=>{
-     handleAsk()
-    },[])
+   
   return (
     <div className="h-screen w-screen bg-black flex justify-center items-center flex-col px-4 relative">
       <div className="flex justify-center items-center flex-col w-full text-center">

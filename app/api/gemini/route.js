@@ -8,7 +8,8 @@ const openai = new OpenAI({
 
 export const POST = async (req,res) => {
    const body = await req.json();
-   const { userMessage } = await body.userMessage;;
+     const { userMessage } = body;
+     console.log(userMessage)
   
     const prompt = `You are a Smart Day Planner AI assistant.
 
@@ -51,7 +52,7 @@ User Input: ${userMessage}`
 
     const aiText = response.choices[0].message.content;
 
-    return new Response(JSON.stringify({ plan: aiText }), {
+   return new Response(JSON.stringify({ plan: aiText }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
