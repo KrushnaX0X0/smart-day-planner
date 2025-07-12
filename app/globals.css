@@ -29,6 +29,36 @@ body{
   display: none;
  }
 
+
+ .color-red {
+  background-color: #f87171; /* red-400 */
+}
+.color-blue {
+  background-color: #60a5fa; /* blue-400 */
+}
+.color-green {
+  background-color: #34d399; /* green-400 */
+}
+.color-yellow {
+  background-color: #facc15; /* yellow-400 */
+}
+.color-purple {
+  background-color: #c084fc; /* purple-400 */
+}
+.color-pink {
+  background-color: #f472b6; /* pink-400 */
+}
+.color-orange {
+  background-color: #fb923c; /* orange-400 */
+}
+.color-teal {
+  background-color: #2dd4bf; /* teal-400 */
+}
+.color-indigo {
+  background-color: #818cf8; /* indigo-400 */
+}
+
+
 .show{
     background-color: rgba(226, 240, 238, 0.952);
     filter: blur(130px);
