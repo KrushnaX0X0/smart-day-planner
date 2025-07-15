@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import 'remixicon/fonts/remixicon.css'
 
 
-function Card({ time, description, topic, duration, emoji, priority, completed, formattedTime,ID }) { 
+function Card({ time, description, topic, duration, emoji, priority,completed, formattedTime,ID }) { 
   const [currentminit,setcurrentminit] = useState("")
   const [taskminit,settaskminit] = useState("")
   
@@ -47,9 +47,18 @@ function Card({ time, description, topic, duration, emoji, priority, completed, 
   );
   localStorage.setItem("smart_day_plan", JSON.stringify({ day_plan: updatedTasks }));
   window.location.reload()
+ 
 
 };
-
+// const taskcomplate = (id) =>{
+//   let alltasks = JSON.parse(localStorage.getItem("smart_day_plan"))
+//     const tasks = alltasks?.day_plan || [];
+//      const completedTasks = tasks.map(task => task.ID == id);
+//     return  completedTasks
+// }
+ 
+//  let  completed = taskcomplate()
+//  console.log(completed)
 
   const colors = [
     "color-red",
