@@ -6,12 +6,12 @@ const openai = new OpenAI({
 });
 
 
-export const POST = async (req,res) => {
-   const body = await req.json();
-     const { userMessage } = body;
-     console.log(userMessage)
-  
-    const prompt = `You are a Smart Day Planner AI assistant.
+export const POST = async (req, res) => {
+  const body = await req.json();
+  const { userMessage } = body;
+  console.log(userMessage)
+
+  const prompt = `You are a Smart Day Planner AI assistant.
 
 The user will give you a short sentence describing their day, such as:
 - "I have to study"
@@ -27,7 +27,13 @@ Your task is to generate a **structured daily plan** in valid **JSON** format.
     {
       "time": "08:00 AM",
       "topic": "Task title",
-      "description": "What the user should do at that time"
+      "description": "What the user should do at that time",
+      "emoji": "📚",             
+      "duration": "1 hour",       
+      "priority": "high",         
+      "location": "Home",         
+      "completed": false  ,
+      "ID"        : 1        
     },
     ...
   ]
@@ -41,8 +47,8 @@ Your task is to generate a **structured daily plan** in valid **JSON** format.
 - Add productive tasks even if user input is short.
 
 User Input: ${userMessage}`
-   try {
-     const response = await openai.chat.completions.create({
+  try {
+    const response = await openai.chat.completions.create({
       model: "mistralai/mistral-7b-instruct",
       messages: [
         { role: "system", content: "You are a helpful planner assistant." },
@@ -52,12 +58,12 @@ User Input: ${userMessage}`
 
     const aiText = response.choices[0].message.content;
 
-   return new Response(JSON.stringify({ plan: aiText }), {
+    return new Response(JSON.stringify({ plan: aiText }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
-    
-   } catch (error) {
-    return Response.json({error})
-   }
+
+  } catch (error) {
+    return Response.json({ error })
+  }
 }

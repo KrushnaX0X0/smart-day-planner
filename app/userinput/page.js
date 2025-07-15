@@ -33,7 +33,7 @@ function page() {
     const pureJson = cleaned.substring(start, end + 1);
     const parsed = JSON.parse(pureJson);
     localStorage.setItem("smart_day_plan", JSON.stringify(parsed));
-    handalclick()
+   handalclick()
 
   }
 
@@ -43,6 +43,7 @@ function page() {
     const locadata = localStorage.getItem("smart_day_plan")
     if (locadata) {
       route.push("/loaddata")
+      setuserinput("")
 
     }
   }
